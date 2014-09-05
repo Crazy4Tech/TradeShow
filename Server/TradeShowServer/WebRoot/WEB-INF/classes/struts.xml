@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="usermanager" extends="json-default">
+		<action name="user*"
+			class="com.tradeshow.action.UserAction" method="user{1}">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="trademanager" extends="json-default">
+		<action name="trade*"
+			class="com.tradeshow.action.TradeAction" method="trade{1}">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="settingmanager" extends="json-default">
+		<action name="setting*"
+			class="com.tradeshow.action.SettingAction" method="setting{1}">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>
